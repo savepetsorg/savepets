@@ -1,2 +1,2 @@
 # savepets
-This project intends save abandoned pets to find out a home
+This project intends to save abandoned pets and to find out a home for them!
