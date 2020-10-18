@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/savepetsorg/savepets/issues"
   },
-  "homepage": "https://github.com/savepetsorg/savepets#readme"
+  "homepage": "https://github.com/savepetsorg/savepets#readme",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2"
+  }
 }
