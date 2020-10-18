@@ -1,6 +1,6 @@
 {
   "name": "savepets",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This project intends to save abandoned pets and to find out a home for them!",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "identity-obj-proxy": "^3.0.0"
+    "identity-obj-proxy": "^3.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
