@@ -21,7 +21,13 @@
     "url": "https://github.com/savepetsorg/savepets/issues"
   },
   "homepage": "https://github.com/savepetsorg/savepets#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2"
   }
