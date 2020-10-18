@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "identity-obj-proxy": "^3.0.0"
+    "identity-obj-proxy": "^3.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
