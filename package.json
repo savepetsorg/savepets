@@ -1,0 +1,24 @@
+{
+  "name": "savepets",
+  "version": "0.0.1",
+  "description": "This project intends to save abandoned pets and to find out a home for them!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savepetsorg/savepets.git"
+  },
+  "keywords": [
+    "pets",
+    "save",
+    "org"
+  ],
+  "author": "Eduardo Kohn",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/savepetsorg/savepets/issues"
+  },
+  "homepage": "https://github.com/savepetsorg/savepets#readme"
+}
