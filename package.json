@@ -1,6 +1,6 @@
 {
   "name": "savepets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This project intends to save abandoned pets and to find out a home for them!",
   "main": "index.js",
   "scripts": {
