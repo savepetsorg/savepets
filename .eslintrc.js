@@ -32,14 +32,6 @@ module.exports = {
     react: {
       version: "detect",
     },
-    "import/resolver": {
-      webpack: {
-        config: "webpack/webpack.common.js",
-      },
-      node: {
-        paths: ["src"],
-      },
-    },
     "import/ignore": ["node_modules"],
   },
 };
