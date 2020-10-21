@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
+// eslint-disable-next-line
 module.exports = function (env, argv) {
   return {
     context: path.resolve(__dirname, "./"),
