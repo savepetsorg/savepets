@@ -4,6 +4,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const dotenv = require("dotenv").config({
+  path: `${__dirname}/.env.production`,
+});
 
 // eslint-disable-next-line
 module.exports = function (env, argv) {
@@ -71,6 +74,9 @@ module.exports = function (env, argv) {
     plugins: [
       new webpack.ProgressPlugin(),
       new webpack.AutomaticPrefetchPlugin(),
+      new webpack.DefinePlugin({
+        "process.env": dotenv.parsed,
+      }),
       new HtmlWebpackPlugin({
         title: "Save Pets",
         template: "./public/index.ejs",
