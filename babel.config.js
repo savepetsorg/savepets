@@ -19,5 +19,23 @@ module.exports = {
     ["transform-class-properties", { spec: true }],
     ["@babel/plugin-proposal-optional-chaining"],
     ["@babel/plugin-syntax-dynamic-import"],
+    [
+      "babel-plugin-import",
+      {
+        libraryName: "@material-ui/core",
+        libraryDirectory: "esm",
+        camel2DashComponentName: false,
+      },
+      "core",
+    ],
+    [
+      "babel-plugin-import",
+      {
+        libraryName: "@material-ui/icons",
+        libraryDirectory: "esm",
+        camel2DashComponentName: false,
+      },
+      "icons",
+    ],
   ],
 };

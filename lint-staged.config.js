@@ -1,3 +1,7 @@
 module.exports = {
-  "src/**/*.js": ["eslint --cache --fix", "prettier --write"],
+  "src/**/*.js": [
+    "prettier --write",
+    "eslint --cache --fix",
+    "jest --bail --findRelatedTests",
+  ],
 };
