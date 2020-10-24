@@ -2,6 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const dotenv = require("dotenv").config({
+  path: `${__dirname}/.env.development`,
+});
 
 // eslint-disable-next-line
 module.exports = function (env, argv) {
@@ -36,12 +39,24 @@ module.exports = function (env, argv) {
             },
           },
         },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          use: {
+            loader: "url-loader",
+          },
+        },
       ],
     },
 
     devtool: "eval-source-map",
 
     devServer: {
+      // port: process.env.DB_PORT,
+      // host: process.env.DB_HOST,
       contentBase: path.join(__dirname, "build"),
       hot: true,
       open: true,
@@ -57,13 +72,16 @@ module.exports = function (env, argv) {
       new webpack.HashedModuleIdsPlugin(),
       new webpack.AutomaticPrefetchPlugin(),
       new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        "process.env": dotenv.parsed,
+      }),
       new webpack.WatchIgnorePlugin([path.resolve(__dirname, "node_modules")]),
       new HtmlWebpackPlugin({
         title: "Save Pets",
         template: "./public/index.ejs",
       }),
       new FaviconsWebpackPlugin({
-        logo: path.resolve(__dirname, "src", "assets", "icons", "favicon.png"),
+        logo: path.resolve(__dirname, "src", "assets", "images", "favicon.png"),
         cache: "./.cache",
         prefix: "static/images/",
         favicons: {
