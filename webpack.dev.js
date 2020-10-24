@@ -55,8 +55,8 @@ module.exports = function (env, argv) {
     devtool: "eval-source-map",
 
     devServer: {
-      // port: process.env.DB_PORT,
-      // host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      host: process.env.DB_HOST,
       contentBase: path.join(__dirname, "build"),
       hot: true,
       open: true,
