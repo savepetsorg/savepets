@@ -3,7 +3,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,react,dotenv,vscode
 
 ### dotenv ###
-.env
 .env.*
 
 ### Linux ###
