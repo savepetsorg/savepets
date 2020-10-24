@@ -8,8 +8,10 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:import/errors",
-    "plugin:react/recommended",
     "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
   ],
   parser: "babel-eslint",
   parserOptions: {
@@ -24,9 +26,15 @@ module.exports = {
     allowImportExportEverywhere: true,
     codeFrame: true,
   },
-  plugins: ["react", "babel", "prettier"],
+  plugins: ["react", "babel", "prettier", "testing-library", "jest-dom"],
   rules: {
     "react/display-name": [0, { ignoreTranspilerName: false }],
+    "no-restricted-imports": [
+      "error",
+      {
+        patterns: ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"],
+      },
+    ],
   },
   settings: {
     react: {

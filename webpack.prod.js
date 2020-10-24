@@ -4,6 +4,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const dotenv = require("dotenv").config({
   path: `${__dirname}/.env.production`,
 });
@@ -36,7 +37,31 @@ module.exports = function (env, argv) {
           include: path.resolve(__dirname, "src"),
           loader: "babel-loader",
         },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          exclude: /(fonts|node_modules)/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name]~[hash:10].[ext]",
+                outputPath: "static/images/",
+              },
+            },
+          ],
+        },
       ],
+    },
+
+    resolve: {
+      alias: {
+        "react-dom$": "react-dom/profiling",
+        "scheduler/tracing": "scheduler/tracing-profiling",
+      },
     },
 
     devtool: "source-map",
@@ -72,6 +97,7 @@ module.exports = function (env, argv) {
     },
 
     plugins: [
+      new CleanWebpackPlugin(),
       new webpack.ProgressPlugin(),
       new webpack.AutomaticPrefetchPlugin(),
       new webpack.DefinePlugin({
@@ -85,7 +111,7 @@ module.exports = function (env, argv) {
         patterns: [{ from: "./public/robots.txt", to: "./" }],
       }),
       new FaviconsWebpackPlugin({
-        logo: path.resolve(__dirname, "src", "assets", "icons", "favicon.png"),
+        logo: path.resolve(__dirname, "src", "assets", "images", "favicon.png"),
         cache: "./.cache",
         prefix: "static/images/",
         favicons: {
