@@ -10,7 +10,7 @@ const dotenv = require("dotenv").config({
 });
 
 // eslint-disable-next-line
-module.exports = function (env, argv) {
+module.exports = (function (env, argv) {
   return {
     context: path.resolve(__dirname, "./"),
 
@@ -145,4 +145,4 @@ module.exports = function (env, argv) {
       }),
     ],
   };
-};
+})();

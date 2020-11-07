@@ -4,14 +4,19 @@ module.exports = {
       "@babel/preset-env",
       {
         useBuiltIns: "entry",
-        corejs: "3.6",
+        corejs: "3.7",
         targets: {
           esmodules: false,
           node: "current",
         },
       },
     ],
-    ["@babel/preset-react"],
+    [
+      "@babel/preset-react",
+      {
+        runtime: "automatic",
+      },
+    ],
   ],
   plugins: [
     ["@babel/plugin-transform-template-literals"],

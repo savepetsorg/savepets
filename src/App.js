@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
+import Title from "./components/atoms/Title";
 import TwitchIcon from "./assets/icons/Twitch";
 import eagleImage from "./assets/images/eagle.jpg";
 import MapMarkerAltSolid from "./assets/icons/MapMarkerAltSolid";
@@ -24,6 +25,7 @@ function App() {
         <Button variant="contained" color="primary">
           Hello World
         </Button>
+        <Title />
         <div>
           <TwitchIcon width="100px" height="100px" />
           <MapMarkerAltSolid width="50px" height="50px" />
